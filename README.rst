@@ -2,9 +2,9 @@
 Zero-level introduction to git for single-user development
 ***********************************************************
 
- OR:
+OR:
 
- **How to SAVE time using git for busy people who multitask**
+**How to SAVE time using git for busy people who multitask**
 
 Typical scenario:
 
