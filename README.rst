@@ -1,17 +1,35 @@
 ***********************************************************
 Zero-level introduction to git for single-user development
+                    OR
+ How to SAVE time using git for busy people who multitask
 ***********************************************************
 
-You have a script you've been working on and it turns out to be useful enough to
-maintain and use again (either just yourself or for others).
+Typical scenario:
 
-Driver - keeping track of each set of changes helps alot with debugging,
-development and sanity, *especially* in a time-fragmented environment where you
+You have a script that is not a complete throwaway and is either:
+
+- Useful enough to maintain and use again.
+- Complicated / long enough that bugs are possible.
+
+Using git can save you time.
+
+Driver #1:
+
+Like many of us, you work in a time-fragmented environment where you
 might be in the middle of something and then get pulled away for an hour or for
-a week... "what the heck was I doing here??"
+a week... you come back and ask "what the heck was I doing here??"
 
-Also helps with accidental keystrokes and makes it sensible and safe to enable
-editor auto-save.
+Driver #2:
+
+Even when focused on a particular script, you might make a few changes and
+suddenly find that something is not working.  Keeping track of each set of
+changes helps alot with debugging and development. Being able to revert to
+the working version helps alot with sanity and stress.
+
+Driver #3:
+
+Little things like protecting against accidental keystrokes and making it
+safe to enable editor auto-save.
 
 Prerequisite
 ============
@@ -139,6 +157,7 @@ Pretty simple, almost...
 ::
 
   git add plot_fss_daily_maxes.py
+  git add mean_fss.py
   git status
 
 Notice the "dirty" repo marker in my prompt. This is super helpful if you have
@@ -190,7 +209,8 @@ Pretend I don't like those changes.
 
   git checkout -- plot_fss_daily_maxes.py
 
-Note: ``git checkout`` has *much* more functionality, so do check out the docs!
+Note: ``git checkout`` has *much* more functionality (JC's favorite gripe
+about git), so do check out the docs!
 
 Make the edits again.
 ::
@@ -209,8 +229,6 @@ For your own standalone work, you can get often away with "Some changes".
 Ignoring files
 --------------
 
-[Note: show VS Code file view]
-
 The ``git status`` output has a lot of cruft from the output plots and old
 intermediate files. It is not necessary but depending on your OCD level it can
 make life easier to tell git to ignore them.
@@ -220,6 +238,11 @@ Add to .gitignore::
 
   *~
   *.png
+  2018/
+
+Then::
+
+  git status
 
 VS code
 =======
@@ -271,7 +294,7 @@ Use Cmd-, or Ctrl-, to get the settings.
 
     "git.autofetch": true,
     "git.confirmSync": false,
-    "git.untrackedChanges": "separate",  // I usually use "hidden"
+    "git.untrackedChanges": "separate",
     "scm.alwaysShowRepositories": true,
     "diffEditor.renderSideBySide": false,
 
@@ -311,13 +334,48 @@ Repeat process using VS code only
   code .
   code ../git-intro-zero/README.rst
 
-Process steps:
+Create repo
+-----------
 
-- Create repo (git init)
-- Check the status of your repo (git status)
-  - Master branch
-  - Commits
-  - Tracked and untracked files
-  - Git History extensions (I have installed but not played with much)
+``git init`` by clicking on Source Control
 
-  
+Repo status
+-----------
+
+``git status``
+
+- Master branch
+- Commits (show also more complicated example using chandra_aca)
+- Tracked and untracked files
+- Git History extension
+
+Add files for tracking
+----------------------
+
+``git add``, ``git commit`` using Source Control
+
+- Add files (the two ``*.py`` files) to the repo using Source Control.
+- Check the status again using Explorer, Source Control.
+- Check commit history from (``git log``) using Explorer Timeline, Source
+  Control using Git History extension.
+- See diffs from a commit (``git diff``) using Git History
+
+Making changes
+--------------
+
+- Edit and notice indications of changes
+- Revert immediately with context click
+- See changes in Source Control
+- Revert from Source Control
+- Stage and commit, OR just commit
+- Check commit history from (``git log``) using Explorer Timeline, Source
+  Control using Git History extension.
+
+Ignoring files
+--------------
+
+Add to .gitignore::
+::
+
+  *~
+  *.png
