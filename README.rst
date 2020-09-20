@@ -33,6 +33,10 @@ Driver #3:
 Little things like protecting against accidental keystrokes and making it
 safe to enable editor auto-save.
 
+*In this talk I will go over a very low-level introduction to using git from
+both the command line and IDE perspectives. There are, of course, tons of high
+quality resources available on the web.*
+
 Prerequisite
 ============
 
@@ -46,15 +50,13 @@ a shell or PowerShell and type `git`.
   git help everyday
   git <subcommand> --help
 
-Command line version
-====================
+Command Line
+============
 
 Let's play with a simple single-user script that is not very pretty.
 ::
 
   cd ~/git/git-intro-zero/fss_trend_annual_cmd_line
-  code .
-  code ../git-intro-zero/README.rst
   ls
 
 Make an empty git repository
@@ -201,9 +203,10 @@ commit the file!
 Making changes
 --------------
 
-Edit the script to fix pylance errors.
+Edit the script to make some small changes.
 ::
 
+  emacs -nw plot_fss_daily_maxes.py
   git diff
 
 Pretend I don't like those changes.
@@ -246,7 +249,7 @@ Then::
 
   git status
 
-VS code
+VS Code
 =======
 
 Settings
