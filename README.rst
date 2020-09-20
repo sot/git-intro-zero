@@ -30,9 +30,11 @@ Command line version
 ====================
 
 Let's play with a simple single-user script that is not very pretty.
+::
 
-
-  cd ~/ska/analysis/fss-git-demo
+  cd ~/git/git-intro-zero/fss_trend_annual_cmd_line
+  code .
+  code ../git-intro-zero/README.rst
   ls
 
 Make an empty git repository
@@ -273,7 +275,49 @@ Use Cmd-, or Ctrl-, to get the settings.
     "scm.alwaysShowRepositories": true,
     "diffEditor.renderSideBySide": false,
 
+Extensions
+==========
+
+VS code relies on open-source extensions to achieve full potential.
+Here are my extensions::
+
+  donjayamanne.githistory
+  dracula-theme.theme-dracula
+  fttx.language-forth
+  Gimly81.fortran
+  Gimly81.matlab
+  guyskk.language-cython
+  hansec.fortran-ls
+  johnpapa.vscode-peacock
+  karigari.chat
+  KevinRose.vsc-python-indent
+  krvajalm.linter-gfortran
+  lextudio.restructuredtext
+  ms-python.python
+  ms-python.vscode-pylance
+  ms-vscode.cpptools
+  ms-vsliveshare.vsliveshare
+  ms-vsliveshare.vsliveshare-audio
+  ms-vsliveshare.vsliveshare-pack
+  npxms.hide-gitignored
+  stkb.rewrap
+  zhuangtongfa.material-theme
 
 Repeat process using VS code only
 =================================
+::
 
+  cd ~/git/git-intro-zero/fss_trend_annual_cmd_line
+  code .
+  code ../git-intro-zero/README.rst
+
+Process steps:
+
+- Create repo (git init)
+- Check the status of your repo (git status)
+  - Master branch
+  - Commits
+  - Tracked and untracked files
+  - Git History extensions (I have installed but not played with much)
+
+  
