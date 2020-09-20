@@ -18,7 +18,8 @@ Prerequisite
 
 Need git installed. On all of our supported platforms (Windows, Mac, linux)
 this is the case. Where to find git may vary, but you need to be able to open
-a shell or PowerShell and type `git`
+a shell or PowerShell and type `git`.
+::
 
   git
   git help -a
@@ -30,10 +31,12 @@ Command line version
 
 Let's play with a simple single-user script that is not very pretty.
 
+
   cd ~/ska/analysis/fss-git-demo
   ls
 
 Make an empty git repository
+::
 
   git init
 
@@ -41,12 +44,14 @@ What happened?  A .git directory got created locally on this computer, and
 that's all!  This just sets up the infrastructure to track files and changes
 locally. We could just delete this directory and the git repository would be
 wiped out. Nobody else in the world knows you just did this.  :-)
+::
 
   ls .git  # Lots of gobbledy-gook that you can ignore
 
-** Digression : git prompt magic **
+**Digression : git prompt magic**
 
 NOTICE on my screen the little magic that happened to the prompt:
+::
 
   (ska3-shiny) ➜  fss-git-demo
   (ska3-shiny) ➜  fss-git-demo git:(master)
@@ -57,6 +62,7 @@ day.  HUGE feature: what branch are you on and has it been modified
 (is it "dirty"?).
 
 For Windows, life is a little trickier but there are options:
+
 - https://git-scm.com/book/en/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-PowerShell
 - https://stackoverflow.com/questions/1287718
 
@@ -64,6 +70,7 @@ Repository Status
 -----------------
 
 First we just want to see what's going on in the repository.
+::
 
   git status
 
@@ -73,11 +80,11 @@ To cover:
 - Commits (represents state of repo at a current point NOT a set of changes)
 - Tracked and untracked files
 
-** Digression : What is a branch? **
+**Digression : What is a branch?**
 
   https://www.atlassian.com/git/tutorials/using-branches
 
-** Single-developer simplification **
+**Single-developer simplification**
 
 If you are just working on your own little script(s), most of the time you
 DON'T NEED branches. So just work on the `master` branch.
@@ -97,6 +104,7 @@ Git configuration
 
 Before going further it is useful to set up your git configuration. There are a
 few required elements and some customizations that can help.
+::
 
   (ska3-shiny) ➜  fss-git-demo git:(master) cat ~/.gitconfig
   [user]
@@ -126,6 +134,7 @@ Adding files to the repo for tracking
 -------------------------------------
 
 Pretty simple, almost...
+::
 
   git add plot_fss_daily_maxes.py
   git status
@@ -133,7 +142,7 @@ Pretty simple, almost...
 Notice the "dirty" repo marker in my prompt. This is super helpful if you have
 10 different repos you are working on at once (yes, this happens!).
 
-** Digression: the git stage **
+**Digression: the git stage**
 
 Git uses a two-step approach to tracking new file or changes to files:
 
@@ -151,6 +160,7 @@ the relevant changes and leave the other ones for a later commit.
 
 Upshot: good to know but for now you don't need to worry about this. Let's just
 commit the file!
+::
 
   git commit -a -m "Add script for plotting daily FSS maxes"
     #  -a, --all
@@ -169,16 +179,19 @@ Making changes
 --------------
 
 Edit the script to fix pylance errors.
+::
 
   git diff
 
 Pretend I don't like those changes.
+::
 
   git checkout -- plot_fss_daily_maxes.py
 
 Note: ``git checkout`` has *much* more functionality, so do check out the docs!
 
 Make the edits again.
+::
 
   git diff
   git commit -a -m "Update logic to avoid possibly unbound dat"
@@ -201,6 +214,7 @@ intermediate files. It is not necessary but depending on your OCD level it can
 make life easier to tell git to ignore them.
 
 Add to .gitignore::
+::
 
   *~
   *.png
@@ -212,6 +226,7 @@ Settings
 --------
 
 Use Cmd-, or Ctrl-, to get the settings.
+::
 
     "terminal.integrated.inheritEnv": false,
     "terminal.integrated.shell.osx": "/bin/zsh",
