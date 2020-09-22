@@ -197,7 +197,9 @@ commit the file!
     #       are given, their values are concatenated as separate paragraphs.
 
   git status
+  git st  # TA custom command
   git log
+  git graph  # TA custom command, show more complex example in chandra_aca
   git show
 
 Making changes
@@ -208,6 +210,7 @@ Edit the script to make some small changes.
 
   emacs -nw plot_fss_daily_maxes.py
   git diff
+  git status
 
 Pretend I don't like those changes.
 ::
