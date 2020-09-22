@@ -34,7 +34,7 @@ Little things like protecting against accidental keystrokes and making it
 safe to enable editor auto-save.
 
 *In this talk I will go over a very low-level introduction to using git from
-both the command line and IDE perspectives. There are, of course, tons of high
+both the command line and VS Code (IDE) perspectives. There are, of course, tons of high
 quality resources available on the web.*
 
 Prerequisite
